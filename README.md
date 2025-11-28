@@ -93,23 +93,27 @@ Weekly Report Interface
 
 Visualization of sensor & network activity
 
+
+<img width="1200" height="700" alt="system_architecture" src="https://github.com/user-attachments/assets/4572a475-3349-41c5-a3f2-030b23914bfc" />
+
+
 ## 📝 Problem Statement
 
-##### Users today face growing digital privacy challenges:
+Users today face growing digital privacy challenges:
 
-##### Excessive and opaque app permission usage
+Excessive and opaque app permission usage
 
-##### Background access to Camera/Mic/Location without user awareness
+Background access to Camera/Mic/Location without user awareness
 
-##### Third-party tracking via hidden DNS lookups
+Third-party tracking via hidden DNS lookups
 
-##### Fragmented privacy controls across the OS
+Fragmented privacy controls across the OS
 
-##### Traditional antivirus solutions detect threats after compromise
+Traditional antivirus solutions detect threats after compromise
 
-##### Lack of proactive behavioral monitoring
+Lack of proactive behavioral monitoring
 
-##### DPSG solves this by providing visibility, intelligence, and control — all in one place.
+DPSG solves this by providing visibility, intelligence, and control — all in one place.
 
 ## 🎯 Project Scope
 
@@ -161,17 +165,6 @@ Maintainability	Modular, well-documented architecture
 
 Usability	Minimal clicks, simplified UI
 
-## 📚 Literature Support
-
-#### The system is backed by research in:
-
-ML-based runtime permission monitoring
-
-DNS-based tracking prevention via VPN
-
-Privacy-enhancing technologies (PETs) in mobile OS
-
-User-centric design for boosting digital literacy
 
 ## 📐 System Analysis & Design
 
@@ -192,6 +185,33 @@ More advanced ML models
 Cross-device IoT monitoring
 
 Advanced threat intelligence
+
+#### DFD Level 0
+
+<img width="1200" height="700" alt="dfd_level0" src="https://github.com/user-attachments/assets/f3fe474f-c14f-46ea-b925-0fe6c985aef2" />
+
+
+#### DFD Level 1
+
+<img width="1200" height="700" alt="dfd_level1" src="https://github.com/user-attachments/assets/cca7db98-2412-45b2-92aa-e5b4daea5a3e" />
+
+
+## 🧑‍💼 Use Case Diagram
+
+<img width="1200" height="700" alt="usecase_diagram" src="https://github.com/user-attachments/assets/85ac73a1-39ee-4b13-a7ef-d8a78fb11ff4" />
+
+
+## 📚 Literature Support
+
+#### The system is backed by research in:
+
+ML-based runtime permission monitoring
+
+DNS-based tracking prevention via VPN
+
+Privacy-enhancing technologies (PETs) in mobile OS
+
+User-centric design for boosting digital literacy
 
 ## 🧾 References
 
