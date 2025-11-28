@@ -186,12 +186,12 @@ Cross-device IoT monitoring
 
 Advanced threat intelligence
 
-#### DFD Level 0
+#### DFD Level 0:
 
 <img width="1200" height="700" alt="dfd_level0" src="https://github.com/user-attachments/assets/f3fe474f-c14f-46ea-b925-0fe6c985aef2" />
 
 
-#### DFD Level 1
+#### DFD Level 1:
 
 <img width="1200" height="700" alt="dfd_level1" src="https://github.com/user-attachments/assets/cca7db98-2412-45b2-92aa-e5b4daea5a3e" />
 
