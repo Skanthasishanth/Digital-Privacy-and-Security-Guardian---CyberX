@@ -199,6 +199,8 @@ Advanced threat intelligence
 ## 🧑‍💼 Use Case Diagram
 
 <img width="1200" height="700" alt="usecase_diagram" src="https://github.com/user-attachments/assets/85ac73a1-39ee-4b13-a7ef-d8a78fb11ff4" />
+<img width="1344" height="768" alt="use_case_diagram" src="https://github.com/user-attachments/assets/01184519-2a47-45bc-a0fc-4efe336a78b1" />
+
 
 
 ## 📚 Literature Support
