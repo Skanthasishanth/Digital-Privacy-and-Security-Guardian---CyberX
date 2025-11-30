@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context="com.dpsg.cyberx.RealTimeMonitorActivity">
+
+    <!-- 1. Permission Status Card & Request Button -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal"
+            android:background="@android:color/white">
+
+            <TextView
+                android:id="@+id/text_usage_permission_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Usage Access Status: Required"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#F44336"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btn_grant_usage_access"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grant Usage Access"
+                android:backgroundTint="#FF9800"/>
+
+            <!-- NEW INTEGRATED INSTRUCTION BLOCK -->
+            <LinearLayout
+                android:id="@+id/instruction_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Follow these steps in the system settings:"
+                    android:textSize="14sp"
+                    android:textStyle="italic"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- Step 1 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1. Find 'CyberX' in the list."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Step 2 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2. Toggle the permission switch ON."
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Step 3 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Use the back button to return to this screen."
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+            <!-- END NEW INSTRUCTION BLOCK -->
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Section Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensitive Access Timeline (Last 24 Hours)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 2. Usage Timeline List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_timeline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_usage_event"/>
+
+</LinearLayout>

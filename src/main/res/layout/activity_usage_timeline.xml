@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context="com.dpsg.cyberx.UsageTimelineActivity">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timeline for:"
+            android:textSize="14sp"
+            android:textColor="#666666"/>
+
+        <TextView
+            android:id="@+id/text_resource_name_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resource Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333333"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Showing events from the last 24 hours."
+            android:textSize="12sp"
+            android:textColor="#FF9800"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Permissions List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_timeline_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_timeline_detail"/>
+
+    <!-- Loading Indicator -->
+    <ProgressBar
+        android:id="@+id/timeline_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#2196F3"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+</LinearLayout>
