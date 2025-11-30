@@ -1,260 +1,214 @@
-# 📱 Digital Privacy & Security Guardian (DPSG)
+# 📱 DPSG CyberX : Digital Privacy & Security Guardian (Android)
 
-### AI-Powered Real-Time Privacy Protection for Android Devices
+**Platform:** Android (Java / XML)  
+**Package Name:** `com.dpsg.cyberx`  
+**Status:** MVP Complete (Structural integrity achieved, API context needs final runtime tuning)
 
-## 🔐 Overview
+DPSG CyberX is a high-assurance, Android security application designed to give users complete visibility and proactive control over app permissions, resource usage, and background security risks. It acts as a **digital privacy guardian** by auditing apps that use sensitive system APIs.
 
-The Digital Privacy & Security Guardian (DPSG) is an advanced, AI-powered mobile security application engineered to give users complete real-time control over their digital privacy. Unlike traditional antivirus tools that operate reactively, DPSG adopts a proactive, behavioral monitoring approach, focusing on preventing unauthorized data access, background sensor abuse, and third-party tracking.
+---
 
+## 🎯 Project Overview & Core Features
 
-DPSG brings together OS-level monitoring, Light Machine Learning (ML) anomaly detection, built-in VPN security, and a Unified Permission Dashboard — creating a single, intelligent, privacy-first security system for modern Android devices.
+The application is structured into **four main functional modules**, all accessible from the central **MainActivity Dashboard**.
 
-## ✨ Key Features
+---
 
-### 🔎 Real-Time Sensor Monitoring
+# I. Core Application Structure
 
-Tracks Camera, Microphone, and Location usage in real time.
+### User-facing app/permission management features.
 
-Identifies which app is accessing sensitive sensors live.
+| Component | Function | Implementation Details |
+|----------|----------|-------------------------|
+| **Phase 1: App Permission Manager** | Lists installed apps and audits dangerous permissions (Camera, Mic, Storage, Location). Direct link to OS Settings provided. | Uses `PackageManager.getPackageInfo()` with `GET_PERMISSIONS` executed on a background thread. |
+| **Phase 2: Real-Time Monitoring** | Tracks last usage time of sensitive hardware (Camera/Mic/Location) for each app over 7 days. | Powered by `UsageStatsManager` (foreground/background logs). |
 
-Logs new device connections and network events.
+---
 
-### 🧠 AI & Intelligence Layer
+# II. System Reporting & Security Auditing
 
-Rule-Based Detection for known risky behaviors.
+### Background metrics collection and risk evaluation.
 
-Light ML Anomaly Detection to flag unusual sensor or network activity.
+| Metric / Section | Function | Android API Used |
+|------------------|----------|------------------|
+| **Phase 3: Privacy Reports** | Generates system health summary: RAM/CPU load, Top 5 Network Hogs, DPSG Security Score. | `ActivityManager`, `Debug.MemoryInfo`, `TrafficStats` |
+| **Phase 4: AI Behavioral Alerts** | Shows alerts triggered by rule-based analysis of CPU/RAM spikes or abnormal activity. | Internal Java logic (Mock data supported) |
 
-Optimized to maintain <5% False Positive Rate (FPR).
+---
 
-### 🛡️ Integrated VPN + Ad Blocking
+# 📐 DPSG Security Score Logic (0–100%)
 
-High-speed, encrypted VPN (WireGuard/OpenVPN supported).
+| Rule | Metric Checked | Deduction |
+|------|----------------|-----------|
+| **R1 (High CPU Hogs)** | App processes with CPU > 10% | –5 points per hog |
+| **R2 (System Overload)** | Running processes > 50 | –10 points |
+| **R3 (RAM Risk)** | RAM usage > 85% | –20 points |
+| **R4 (Network Risk)** | Top network hog > 50MB | –15 points |
 
-DNS-based policy filtering to block trackers and ad networks.
+---
 
-Prevents hidden DNS lookups used for tracking.
+# 🚀 Getting Started
 
-### 🖥️ Unified Dashboard
+## Prerequisites
+- Android Studio (Latest)
+- Android SDK Platform 29+ (Android 10+)
+- Java + XML support
 
-Centralized control of all app permissions.
+---
 
-Simplifies Android’s complex permission menus.
+## Installation
 
-One-click toggles for VPN, monitoring, and sensor status.
+1. **Clone the Repository**
+   ```
+   git clone https://github.com/Skanthasishanth/Digital-Privacy-and-Security-Guardian---CyberX.git
+   cd CyberX
+   ```
+## ▶️ Run Instructions
 
-### 📊 Weekly Privacy & Security Reports
+### **Open the Project**
+- Open in **Android Studio**
+- Allow **Gradle** to complete syncing
 
-Automatically generated.
+### **Run the App**
+- Use a **Physical Android Device**  
+  **OR**
+- Use an **Android 10+ Emulator (API 29 or higher)**
 
-Highlights sensor usage patterns, suspicious activity, and recommendations.
+---
 
-Designed to boost digital awareness and literacy.
+## 🔐 Mandatory Runtime Permission (Critical)
 
-### 🌐 Basic IoT Device Scanning
+Required for **Real-Time Monitoring** to function.
 
-Detects new devices connected to the same Wi-Fi network.
+### Steps:
+1. Open the app.
+2. Navigate to the **Real-Time Monitoring** screen.
+3. Tap **Grant Usage Access**.
+4. In Android **Settings**, enable:
+   **Permit usage access → CyberX**
+5. Return to the app → The status becomes **Granted**.
 
-Helps users identify unknown IoT connections.
+---
 
-## 🧭 System Architecture
+## 💻 Expected Output
 
-### DPSG follows a modular, scalable architecture with four core layers:
+## **Dashboard**
+A clean UI with the following 4 primary modules:
+- **App Permissions**
+- **Real-Time Monitoring**
+- **Alerts**
+- **Reports**
 
-#### 1. Monitoring Layer
+  
+## 🖼️ Output Screenshot
 
-Tracks sensor access
+![WhatsApp Image 2025-11-30 at 23 36 35_29144fd2](https://github.com/user-attachments/assets/e1881013-b319-4fae-af9d-8542dc5aa691)
 
-Records network activity
+---
 
-Performs lightweight OS-level background operations
+## **App Permissions**
+- Shows all installed apps  
+- Selecting an app displays all **dangerous permissions**  
+- A **Manage** button opens the OS settings for that app
 
-#### 2. Network Layer
+  
+## 🖼️ Output Screenshots
 
-VPN tunneling
+![WhatsApp Image 2025-11-30 at 23 36 35_6b3472f8](https://github.com/user-attachments/assets/a81a03f7-2121-4f82-b737-d1de94e5d203)
 
-DNS-based ad/tracker blocking
+![WhatsApp Image 2025-11-30 at 23 36 35_33aca735](https://github.com/user-attachments/assets/3ecdf497-b251-4cc7-8b03-12b1b32a16e9)
 
-Secure network traffic encryption
 
-#### 3. Intelligence Layer (AI)
+---
 
-Rule-based threat detection
+## **Real Time Monitoring**
+ - Shows which apps use sensitive permissions
+ - 4 main sensitive permissions
+ - Shows timing that apps which timing they used permissions
 
-ML-based anomaly detection
 
-Behavioral scoring engine
+## 🖼️ Output Screenshots
 
-#### 4. Presentation Layer
 
-Unified Dashboard
+![WhatsApp Image 2025-11-30 at 23 36 36_6ae9fb8b](https://github.com/user-attachments/assets/7486a31e-f895-42b1-a2e6-b4af20ad3808)
 
-Weekly Report Interface
+![WhatsApp Image 2025-11-30 at 23 36 36_59d9017d](https://github.com/user-attachments/assets/0d873393-366c-41c1-8dcf-e17b46aa90b3)
+   
 
-Visualization of sensor & network activity
+## **Reports**
+Displays all major device security metrics:
+- **Security Score**
+- **RAM Usage**
+- **CPU Usage**
+- **Network Usage**
+- **Top 5 Network/Data Hogs**
+- **Memory-Sorted Process List**
 
 
-<img width="1200" height="700" alt="system_architecture" src="https://github.com/user-attachments/assets/4572a475-3349-41c5-a3f2-030b23914bfc" />
+## 🖼️ Output Screenshots
 
+![WhatsApp Image 2025-11-30 at 23 36 37_fdb39f38](https://github.com/user-attachments/assets/4f2cb4ca-82c8-4e0d-91b1-a9dccaaa5c79)
 
-## 📝 Problem Statement
 
-Users today face growing digital privacy challenges:
+![WhatsApp Image 2025-11-30 at 23 36 37_a6ac2b95](https://github.com/user-attachments/assets/f726003c-f3fb-438d-9105-a588373d5501)
 
-Excessive and opaque app permission usage
+---
 
-Background access to Camera/Mic/Location without user awareness
 
-Third-party tracking via hidden DNS lookups
+## ***Alert for Based on Aehaviour***
 
-Fragmented privacy controls across the OS
+   -   Shows crictical alerts
+   -   Shows which apps using permission on night time
+   -   Even screen locked
 
-Traditional antivirus solutions detect threats after compromise
+## 🖼️ Output Screenshot
 
-Lack of proactive behavioral monitoring
+![WhatsApp Image 2025-11-30 at 23 36 38_fd2d1bec](https://github.com/user-attachments/assets/6ae9f4a8-6924-426f-aa61-1d7dd6ecbe54)
 
-DPSG solves this by providing visibility, intelligence, and control — all in one place.
 
-## 🎯 Project Scope
 
-#### The initial release focuses on:
 
-Android platform
+## 🤝 Contribute
 
-Full implementation of real-time tracking & rule-based detection
+Contributions are welcome!
 
-Integrated VPN + DNS filtering
+### Steps to Contribute:
 
-Weekly reporting
+1. **Fork this repository**
 
-Unified UI for permissions
+2. **Create a Feature Branch**
+   ```
+   git checkout -b feature/AmazingFeature
+   ```
+3. **Commit your changes**
+   ```
+     git commit -m "Add AmazingFeature"
+   ```
+4. **Push the branch**
+   ```
+      git push origin feature/AmazingFeature
+   ```
+5. **Open a Pull Request**
 
-Scalable architecture for future ML expansion
+     Provide a clear explanation of what you changed and why.
 
-Low resource (battery/CPU) usage
 
-## ⚙️ Functional Requirements
+## ⚖️ License
 
-Real-time monitoring of Camera/Mic/Location
+  Distributed under the MIT License.
+  See LICENSE.md for more information.
 
-Live alerts for unusual activity
 
-Unified Permission Dashboard
+## ✍️ Authors
 
-Weekly auto-generated reports
+**CyberX Development Team**
 
-One-click VPN & Ad-Blocker
+- **Perarasu M** — Founder & Lead Developer  
+  *Android Development • Cybersecurity • System Monitoring Module*
 
-Basic IoT device detection
+- **Kantha Sishanth S** — Co-Founder & Co-Developer  
+  *Feature Development • UI/UX • Debugging & Optimization*
 
-Secure local storage of logs and reports
+If you like to contribute to this project, feel free to open a Pull Request!
 
-## 🛠️ Non-Functional Requirements
 
-Requirement	Target
-
-Battery Performance	Lightweight background operations
-
-Accuracy (ML)	FPR < 5%
-
-Security	Encrypted storage, GDPR compliance
-
-Reliability	99.9% uptime for monitoring service
-
-Maintainability	Modular, well-documented architecture
-
-Usability	Minimal clicks, simplified UI
-
-
-## 📐 System Analysis & Design
-
-#### DPSG is designed to address:
-
-Fragmented privacy controls
-
-Lack of real-time behavioral detection
-
-Growing need for AI-driven privacy intelligence
-
-Unified & simplified user experience
-
-The architecture supports expansion into:
-
-More advanced ML models
-
-Cross-device IoT monitoring
-
-Advanced threat intelligence
-
-#### DFD Level 0:
-
-<img width="1200" height="700" alt="dfd_level0" src="https://github.com/user-attachments/assets/f3fe474f-c14f-46ea-b925-0fe6c985aef2" />
-
-
-#### DFD Level 1:
-
-<img width="1200" height="700" alt="dfd_level1" src="https://github.com/user-attachments/assets/cca7db98-2412-45b2-92aa-e5b4daea5a3e" />
-
-
-## 🧑‍💼 Use Case Diagram
-
-<img width="1344" height="768" alt="use_case_diagram" src="https://github.com/user-attachments/assets/01184519-2a47-45bc-a0fc-4efe336a78b1" />
-
-
-## 📚 Literature Support
-
-#### The system is backed by research in:
-
-ML-based runtime permission monitoring
-
-DNS-based tracking prevention via VPN
-
-Privacy-enhancing technologies (PETs) in mobile OS
-
-User-centric design for boosting digital literacy
-
-## 🧾 References
-
-Sharma, A., & Gupta, S. (2023). Machine Learning for Runtime Permission Monitoring in Android Applications. International Journal of Computer Applications.
-
-Chen, M., & Kumar, R. (2022). DNS-based Tracking Prevention in Mobile VPN Architectures. International Journal of Emerging Technologies.
-
-Li, Y., & Das, K. (2022). Privacy-Enhancing Technologies in Mobile Operating Systems. IEEE Access.
-
-Android Developer Documentation — developer.android.com
-
-## 🧑‍💻 Tech Stack (Planned / Implemented)
-
-Android (Java/Kotlin)
-
-Python ML Models (For anomaly detection – optional future phase)
-
-WireGuard / OpenVPN for VPN integration
-
-Local encrypted storage (SQLCipher/Room DB)
-
-Custom DNS filtering engine
-
-## 🚀 Future Enhancements
-
-Full ML-based behavioral modeling
-
-Network traffic classification (AI-powered)
-
-Integration with IoT ecosystem monitoring
-
-Cloud-based encrypted backups
-
-Real-time device threat scoring
-
-## 📄 License
-
-This project can be made open-source under the MIT License or the preferred institutional license.
-
-## 🤝 Contributors
-
-KANTHA SISHANTH S (212222100020)
-
-Department of Computer Science & Engineering (Cyber Security)
-
-Saveetha Engineering College
